@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WAWAWAWAWA</title>
+    <style>
+        body,
+        html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            width: 100%;
+            overflow: hidden;
+            background-color: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #image-container {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #image-container::before {
+            content: "WAWAWA WAWAWA WAWAWA WAWAWA WAWAWA WAWAWA WAWAWA WAWAWA WAWAWA WAWAWA WAWAWA WAWAWA WAWAWA WAWAWA WAWAWA WAWAWA WAWAWA WAWAWA WAWAWA";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 10vw;
+            color: rgba(255, 255, 255, 0.1);
+            white-space: nowrap;
+            animation: scroll 10s linear infinite;
+        }
+
+        @keyframes scroll {
+            0% {
+                transform: translate(-50%, -50%);
+            }
+
+            100% {
+                transform: translate(-150%, -50%);
+            }
+        }
+
+        #wa-image {
+            position: relative;
+            max-width: 100%;
+            max-height: 100%;
+            animation: hue-rotate 5s infinite linear, expand-contract 5s infinite ease-in-out;
+        }
+
+        @keyframes hue-rotate {
+            0% {
+                filter: hue-rotate(0deg);
+            }
+
+            100% {
+                filter: hue-rotate(360deg);
+            }
+        }
+
+        @keyframes expand-contract {
+
+            0%,
+            100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.1);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="image-container">
+        <img id="wa-image" src="wa.jpg" alt="WAWAWAWAWA">
+    </div>
+    <audio id="background-audio" loop autoplay>
+        <source src="wa.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+    <script>
+        // Ensure the audio plays even if the page is interacted with
+        document.addEventListener('click', function () {
+            var audio = document.getElementById('background-audio');
+            if (audio.paused) {
+                audio.play();
+            }
+        });
+    </script>
+</body>
+
+</html>
